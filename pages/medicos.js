@@ -1,20 +1,6 @@
  
-class Pacientes{
-   constructor(id, nombre,apellido,email,dni,tel,consulta,turno){
-    this.id= id;
-    this.nombre=nombre;
-    this.apellido= apellido;
-    this.email= email;
-    this.dni= dni;
-    this.tel= tel;
-    this.consulta= consulta;
-    this.turno= turno;
-   }
 
-}
-
-
-// let pacientes= [
+//let pacientes= [
 //   {
 //     id:7,
 //     nombre: "Magali",
@@ -37,19 +23,31 @@ class Pacientes{
 //     turno: "30/5/2024",
 
 // },] ;
-// //console.log(pacientes);
+//console.log(pacientes);localStorage.setItem("pacientes", JSON.stringify(pacientes));
+ class Pacientes{
+  constructor(id, nombre,apellido,email,dni,tel,consulta,turno){
+   this.id= id;
+   this.nombre=nombre;
+   this.apellido= apellido;
+   this.email= email;
+   this.dni= dni;
+   this.tel= tel;
+   this.consulta= consulta;
+   this.turno= turno;
+  }
 
- // localStorage.setItem("pacientes", JSON.stringify(pacientes));
-
+}
  const data = JSON.parse(localStorage.getItem("pacientes")) || [];
 
  let contenedor= document.getElementById("contenedor-tabla");
 
  
-const listarPacientes= ()=>{
+const listarPacientes= () =>{
   contenedor.innerHTML= "";
   
     data.forEach((item) => {
+      
+    
          let estructuraFila= document.createElement("tr");
          //creo la estructura de la tabla
          let datos = ` 
@@ -71,10 +69,10 @@ const listarPacientes= ()=>{
 };
 
 
-const agregarDatos= (event)=>{
+const agregarDatos = (event)=>{
   event.preventDefault();
   
-//   contenedor.innerHTML= "" ;
+  contenedor.innerHTML= "" ;
 
   let id= new Date().getTime();
 
@@ -101,13 +99,20 @@ localStorage.setItem("pacientes", JSON.stringify(data));
   
  listarPacientes();
 }
+listarPacientes();
 
 
+function eliminar(id){
+     let opcion= confirm("¿Esta seguro quiere Eliminar este Paciente?");
+     if (opcion) {
+      const index = data.findIndex(paciente => paciente.id === id);
+      if (index !== -1) {
+          data.splice(index, 1);
+    
+      localStorage.setItem("pacientes", JSON.stringify("data"));
+       }
+     }
 
-// function eliminar(item){
-   
-//       data.splice(item,1);
-//       localStorage.setItem("data", JSON.stringify("data"));
 
-//       listarPacientes();
-// }
+      listarPacientes();
+}
