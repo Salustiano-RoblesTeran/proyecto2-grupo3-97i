@@ -59,7 +59,7 @@ const listarPacientes= () =>{
          <td> ${item.consulta}</td>
          <td>${item.turno}</td>
          <td> <button onclick="eliminar(${item.id})" class="btn btn-danger">Eliminar</button>
-         <button onclick="modificar(${item.id})" class="btn btn-warning m-2">Editar</button> </td> 
+         </td> 
          `;
 
          estructuraFila.innerHTML= datos;

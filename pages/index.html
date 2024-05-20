@@ -9,7 +9,8 @@
 </head>
 <body>
 
-  <header > <h1>Panel de Medicos</h1> </header> 
+  <header > <h1>Medicos</h1> </header> 
+  <hr>
   <main>
     <h2 >Pacientes</h2>
     <div class=" row  mt-5 ">
@@ -30,6 +31,7 @@
   
     <hr>
     <form onsubmit="agregarDatos(event)">
+      <fieldset>
         <div class="mb-3">
             <label for="exampleInputNombre1" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="Nombre1" placeholder="Nombre">
@@ -61,7 +63,7 @@
             <label for="exampleInputTurno1" class="form-label">Turno</label>
             <input type="date" class="form-control" id="Turnos" placeholder="13/05/2024">
           </div>
-       
+        </fieldset>
         <button type="submit" class="btn btn-primary" >Agregar</button>
       </form>
   </main>

@@ -7,15 +7,17 @@
 form{
     margin: 0 auto;
     width: 40vw;
-   border: solid 2px rgb(158, 216, 239);
+  
 }
-form td,tr{
-    border: 1px solid rgb(110, 106, 106);
+ td,tr{
+    border: 1px solid rgb(77, 163, 180);
     text-align: center;
 }
 header{
     text-align: center;
 }
 h2{
+    margin-left: 5%;
+   
     color: brown;
 }
