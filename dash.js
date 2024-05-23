@@ -1,6 +1,6 @@
 // Datos de ejemplo de médicos
 const medicos = [
-    { nombre: "Dr. Marcos García", especialidad: "Pediatría" },
+    { nombre: "Dr. Marcos Farías", especialidad: "Pediatría" },
     { nombre: "Dra. María Rodríguez", especialidad: "Nutrición" },
     { nombre: "Dr. Carlos López", especialidad: "Dermatología" },
     // Agrega más médicos aquí
