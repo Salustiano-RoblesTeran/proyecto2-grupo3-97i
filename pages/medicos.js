@@ -1,29 +1,4 @@
- 
 
-//let pacientes= [
-//   {
-//     id:7,
-//     nombre: "Magali",
-//     apellido: "Navarro",
-//     email: "maguinavarro07@gmail.com",
-//     dni: 44580781,
-//     tel: 3815697237,
-//     consulta:"cardiologia",
-//     turno: "30/5/2024",
-
-// },
-// {
-//     id:9,
-//     nombre: "Magali",
-//     apellido: "Navarro",
-//     email: "maguinavarro07@gmail.com",
-//     dni: 44580781,
-//     tel: 3815697237,
-//     consulta:"cardiologia",
-//     turno: "30/5/2024",
-
-// },] ;
-//console.log(pacientes);localStorage.setItem("pacientes", JSON.stringify(pacientes));
  class Pacientes{
   constructor(id, nombre,apellido,email,dni,tel,consulta,turno){
    this.id= id;
@@ -38,9 +13,12 @@
 
 }
  const data = JSON.parse(localStorage.getItem("pacientes")) || [];
+ const dataAceptados = JSON.parse(localStorage.getItem("pacientesAceptados")) || [];
+ const dataRechazados = JSON.parse(localStorage.getItem("pacientesRechazados")) || [];
 
  let contenedor= document.getElementById("contenedor-tabla");
-
+ let contenedorAceptados= document.getElementById("contenedor-tabla-aceptados");
+ let contenedorRechazados= document.getElementById("contenedor-tabla-rechazados");
  
 const listarPacientes= () =>{
   contenedor.innerHTML= "";
@@ -58,12 +36,61 @@ const listarPacientes= () =>{
          <td>${item.tel}</td>
          <td> ${item.consulta}</td>
          <td>${item.turno}</td>
-         <td> <button onclick="eliminar(${item.id})" class="btn btn-danger">Eliminar</button>
+         <td> <button onclick="rechazar(${item.id})" class="btn btn-danger">Rechazar</button>
+         <button onclick="aceptar(${item.id})" class="btn btn-success">Aceptar</button>
          </td> 
          `;
 
          estructuraFila.innerHTML= datos;
          contenedor.appendChild(estructuraFila);
+    });
+  
+};
+const listarPacientesAceptados= () =>{
+  contenedorAceptados.innerHTML= "";
+  
+    dataAceptados.forEach((item) => {
+      
+    
+         let estructuraFila= document.createElement("tr");
+         //creo la estructura de la tabla
+         let datos = ` 
+         <td>${item.nombre}</td>
+         <td>${item.apellido}</td>
+         <td>${item.email}</td>
+         <td> ${item.dni}</td>
+         <td>${item.tel}</td>
+         <td> ${item.consulta}</td>
+         <td>${item.turno}</td>
+        
+         `;
+
+         estructuraFila.innerHTML= datos;
+         contenedorAceptados.appendChild(estructuraFila);
+    });
+  
+};
+const listarPacientesRechazados= () =>{
+  contenedorRechazados.innerHTML= "";
+  
+    dataRechazados.forEach((item) => {
+      
+    
+         let estructuraFila= document.createElement("tr");
+         //creo la estructura de la tabla
+         let datos = ` 
+         <td>${item.nombre}</td>
+         <td>${item.apellido}</td>
+         <td>${item.email}</td>
+         <td> ${item.dni}</td>
+         <td>${item.tel}</td>
+         <td> ${item.consulta}</td>
+         <td>${item.turno}</td>
+        
+         `;
+
+         estructuraFila.innerHTML= datos;
+         contenedorRechazados.appendChild(estructuraFila);
     });
   
 };
@@ -102,17 +129,43 @@ localStorage.setItem("pacientes", JSON.stringify(data));
 listarPacientes();
 
 
-function eliminar(id){
-     let opcion= confirm("¿Esta seguro quiere Eliminar este Paciente?");
+const rechazar= (id)=>{
+     let opcion= confirm("¿Esta seguro quiere que Rechazar este Paciente?");
      if (opcion) {
       const index = data.findIndex(paciente => paciente.id === id);
       if (index !== -1) {
-          data.splice(index, 1);
-    
-      localStorage.setItem("pacientes", JSON.stringify("data"));
-       }
-     }
-
+         const pacientesRechazados= data.splice(index, 1)[0];
+      dataRechazados.push(pacientesRechazados);
+      localStorage.setItem("pacientes", JSON.stringify(data));
+      localStorage.setItem("pacientesRechazados", JSON.stringify(dataRechazados));
 
       listarPacientes();
+      listarPacientesRechazados();
+       }
+      
+     }
+    
 }
+
+const aceptar = (id)=>{
+  let opcion= confirm("¿Esta seguro quiere que Aceptar este Paciente?");
+  if (opcion) {
+   const index = data.findIndex(paciente => paciente.id === id);
+   if (index !== -1) {
+
+   const pacientesAceptados= data.splice(index, 1)[0];
+   dataAceptados.push(pacientesAceptados);
+   localStorage.setItem("pacientes", JSON.stringify(data));
+   localStorage.setItem("pacientesAceptados", JSON.stringify(dataAceptados));
+   
+    listarPacientes();
+    listarPacientesAceptados();
+    }
+   
+  }
+ 
+
+}
+listarPacientes();
+listarPacientesAceptados();
+listarPacientesRechazados();
