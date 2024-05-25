@@ -9,97 +9,9 @@
 </head>
 <body>
 
-  <header > <h1>Medicos</h1> </header> 
-  <hr>
+  <header ></header> 
   <main>
-    <h3>Pacientes Pendientes</h3>
-    <div class=" row  mt-5 ">
-      <div class="col-12">
-        <table class="table table-bordered table-hover" >
-           <thead class="table-dark">
-           <tr class="text-center">
-            <th>Nombre</th><th>Apellido</th><th>Email</th><th>DNI</th><th>Telefono</th><th>Consulta</th><th>Turno</th><th>Accion</th>
-           </tr>
-        </thead>
-        
-        <tbody id="contenedor-tabla">
-        </tbody>
-        </table>
-      </div>
-    </div> 
-    <hr/>
-    <h3>Pacientes Aceptados</h3>
-    <div class=" row  mt-5 ">
-      <div class="col-12">
-        <table class="table table-bordered table-hover" >
-           <thead class="table-dark">
-           <tr class="text-center">
-            <th>Nombre</th><th>Apellido</th><th>Email</th><th>DNI</th><th>Telefono</th><th>Consulta</th><th>Turno</th>
-           </tr>
-        </thead>
-        
-        <tbody id="contenedor-tabla-aceptados">
-        </tbody>
-        </table>
-      </div>
-    </div> 
-    <hr/>
-    <h3>Pacientes Rechazados</h3>
-    <div class=" row  mt-5 ">
-      <div class="col-12">
-        <table class="table table-bordered table-hover" >
-           <thead class="table-dark">
-           <tr class="text-center">
-            <th>Nombre</th><th>Apellido</th><th>Email</th><th>DNI</th><th>Telefono</th><th>Consulta</th><th>Turno</th>
-           </tr>
-        </thead>
-        
-        <tbody id="contenedor-tabla-rechazados">
-        </tbody>
-        </table>
-      </div>
-    </div> 
 
-
-
-  
-    <hr>
-    <form onsubmit="agregarDatos(event)">
-      <fieldset>
-        <div class="mb-3">
-            <label for="exampleInputNombre1" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="Nombre1" placeholder="Nombre">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputApellido1" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="Apellido1" placeholder="Apellido">
-          </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email </label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="fulanit@gmail.com">
-         
-        </div>
-
-        <div class="mb-3">
-          <label for="exampleInputNumber1" class="form-label">DNI:</label>
-          <input type="number" class="form-control" id="dni" placeholder="Ej.44580781">
-        </div>
-       
-        <div class="mb-3">
-            <label for="exampleInputTelefono1" class="form-label">Telefono:</label>
-            <input type="tel" class="form-control" id="Telefono" placeholder="Ej. 3815549942">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputMotivo1" class="form-label">Consulta</label>
-            <input type="text" class="form-control" id="consulta" placeholder="Motivo">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputTurno1" class="form-label">Turno</label>
-            <input type="date" class="form-control" id="Turnos" placeholder="13/05/2024">
-          </div>
-        </fieldset>
-        <button type="submit" class="btn btn-primary" >Agregar</button>
-      </form>
   </main>
   <script src="medicos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
