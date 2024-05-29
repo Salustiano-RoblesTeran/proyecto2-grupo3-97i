@@ -1,9 +1,22 @@
 // Datos de ejemplo de médicos
 const medicos = [
-    { nombre: "Dr. Marcos Farías", especialidad: "Pediatría" },
-    { nombre: "Dra. María Rodríguez", especialidad: "Nutrición" },
-    { nombre: "Dr. Carlos López", especialidad: "Dermatología" },
-    // Agrega más médicos aquí
+    { nombre: "Dr. Marcos Farías", especialidad: "Pediatría", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dr. Augusto Sosa", especialidad: "Pediatría", atencion:"lun a vie de 14:00 a 22:00"  },
+    { nombre: "Dra. María Rodríguez", especialidad: "Nutrición" , atencion:"lun a vie de 09:00 a 14:00" },
+    { nombre: "Dra. Ricardo Sanchez", especialidad: "Nutrición" , atencion:"lun a vie de 14:00 a 22:00" },
+    { nombre: "Dr. Carlos López", especialidad: "Dermatología", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dra. Lucía Vallejos", especialidad: "Dermatología", atencion:"lun a vie de 14:00 a 22:00"  },
+    { nombre: "Dra. Beatriz Peña", especialidad: "Odontología", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dra. Beatriz Peña", especialidad: "Odontología", atencion:"lun a vie de 14:00 a 22:00"  },
+    { nombre: "Dr. Pedro Acosta", especialidad: "Cardiología", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dr. Susana Paez", especialidad: "Cardiología", atencion:"lun a vie de 14:00 a 22:00"  },
+    { nombre: "Dr.Fernando Alcaraz", especialidad: "Traumatología", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dr.Gustavo Marchetti ", especialidad: "Traumatología", atencion:"lun a vie de 14:00 a 22:00"  },
+    { nombre: "Dra. Ana Velez ", especialidad: "radiología", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dr.Jaime Ferrari ", especialidad: "radiología", atencion:"lun a vie de 14:00 a 22:00"  },
+    { nombre: "Dr.Gonzalo Silva ", especialidad: "Endocrinología", atencion:"lun a vie de 09:00 a 14:00"  },
+    { nombre: "Dra. Fabiana Alvarado", especialidad: "Endocrinología", atencion:"lun a vie de 09:00 a 14:00"  },
+    // Agregar más médicos 
   ];
   
   // Función para buscar médicos por especialidad
@@ -27,6 +40,7 @@ const medicos = [
             <div class="card-body">
               <h5 class="card-title">${medico.nombre}</h5>
               <p class="card-text">${medico.especialidad}</p>
+              <p class="card-text">${medico.atencion}</p>
               <button class="btn btn-primary" onclick="solicitarTurno('${medico.nombre}')">Solicitar Turno</button>
             </div>
           </div>
