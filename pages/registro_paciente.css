@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#bord {
+    width: 30%;
+    border: solid ;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+#bord h3{
+    text-align: center;
+  }
+
+.itemsform{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+#buttonreg{
+    width: 100%;
+}
+
+.tcuenta{
+    text-align: center;
+}
+
+#buttonlogin{
+    width: 100%;
+}
+
+#formsesion{
+    width: 40%;
+    margin: auto;
+}
+
+.modal-body{
+    width: 100%;
+}
+
+#buttoninicio{
+    width: 50%;
+}
+
