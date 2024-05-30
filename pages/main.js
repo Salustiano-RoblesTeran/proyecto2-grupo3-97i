@@ -1,6 +1,0 @@
-
-
-function Principal () {
-}
-
-export {Principal}

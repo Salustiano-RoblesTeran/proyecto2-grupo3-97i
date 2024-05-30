@@ -162,7 +162,6 @@ let usuarios = [
 ];
 
 const imprimirMedicos = () => {
-    let contenidoTabla = document.querySelector(".contenidoTabla");
     usuarios.forEach((usuario) => {
         if (usuario.medico) {
             let fila = document.createElement('tr');
@@ -171,16 +170,6 @@ const imprimirMedicos = () => {
                 <td>${usuario.especialidad}</td>
                 <td>${usuario.localidad}</td>
             `;
-
-            fila.addEventListener('click', () => {
-                document.getElementById('modalNombre').textContent = `Nombre: ${usuario.nombre}`;
-                document.getElementById('modalEspecialidad').textContent = `Especialidad: ${usuario.especialidad}`;
-                document.getElementById('modalLocalidad').textContent = `Localidad: ${usuario.localidad}`;
-                let modal = new bootstrap.Modal(document.getElementById('medicoModal'));
-                modal.show();
-            });
-
-            contenidoTabla.appendChild(fila);
         }
     });
 }

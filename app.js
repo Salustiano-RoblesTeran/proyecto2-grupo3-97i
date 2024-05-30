@@ -1,9 +1,7 @@
 
-import { Footer } from "./pages/footer.js";
-import { Principal } from "./pages/main.js";
+import { Footer } from "./js/footer.js";
 
 
 window.onload = function () {
   Footer();
-  Principal();
 };
