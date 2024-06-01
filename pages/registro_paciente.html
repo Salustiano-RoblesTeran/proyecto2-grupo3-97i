@@ -15,19 +15,12 @@
     <header></header>
 
     <main>
-      <section>
-        
-
+      <div>
           <div id="bord">
             <h3>Registrarse</h3>
-
-            <form>
-              <div >
+            <form id="formulario">
                 <div class="d-flex justify-content-evenly">
                 <div class="itemsform">
-                  <!-- <label for="inputName" class="form-label"
-                    >Nombre</label
-                  > -->
                   <input
                     type="text"
                     class="form-control"
@@ -38,9 +31,6 @@
                 </div>
 
                 <div class="itemsform">
-                  <!-- <label for="inputlastName" class="form-label"
-                    >Apellido</label
-                  > -->
                   <input
                     type="text"
                     class="form-control"
@@ -52,7 +42,6 @@
               </div>
 
                 <div class="itemsform">
-                  <!-- <label for="emailInput" class="form-label">Email</label> -->
                   <input
                     type="email"
                     class="form-control"
@@ -63,7 +52,6 @@
                 </div>
 
                 <div class="itemsform">
-                  <!-- <label for="inputPass" class="form-label">Contraseña</label> -->
                   <input
                     type="password"
                     class="form-control"
@@ -74,7 +62,6 @@
                 </div>
 
                 <div class="itemsform">
-                  <!-- <label for="inputPassC" class="form-label">Confirmar contraseña</label> -->
                   <input
                     type="password"
                     class="form-control"
@@ -85,9 +72,6 @@
                 </div>
 
                 <div class="itemsform">
-                  <!-- <label for="inputDireccion" class="form-label"
-                    >Dirección</label
-                  > -->
                   <input
                     type="text"
                     class="form-control"
@@ -98,7 +82,6 @@
                 </div>
 
                 <div class="itemsform">
-                  <!-- <label for="telInput" class="form-label">Teléfono</label> -->
                   <input
                     type="text"
                     class="form-control"
@@ -108,8 +91,8 @@
                   />
                 </div>
 
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary mt-2" id="buttonreg">
+                <div class="">
+                  <button type="submit" class="btn btn-success mt-2" id="buttonreg" onclick="agregarUsuario(event)">
                     Registrarme
                   </button>
                 </div>
@@ -126,14 +109,13 @@
                     Login
                   </button>
                 </div>
-
-              </div>
             </form>
           </div>
-      </section>
+      </div>
     </main>
 
     <footer></footer>
+    <script src="/pages/registro_paciente.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
@@ -190,7 +172,7 @@ style="background-color: rgb(249, 249, 247)"
         />
       </div>
       <div class="d-flex justify-content-center mt-2">
-        <button type="submit" class="btn btn-primary mt-2" id="buttoninicio">
+        <button type="submit" class="btn btn-success mt-2" id="buttoninicio">
           Iniciar sesion
         </button>
       </div>
