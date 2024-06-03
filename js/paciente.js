@@ -1,5 +1,6 @@
 const personas = [
     {
+        id: 3020,
         nombre: "Juan",
         apellido: "Pérez",
         edad: 34,
@@ -201,3 +202,68 @@ const personas = [
     }
 ];
 
+const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+
+class Turno {
+    constructor (id, nombrePaciente, nombreMedico, descripcion, localidad, horario, turnoEstado) {
+        this.id = id;
+        this.nombrePaciente = nombrePaciente;
+        this.nombreMedico = nombreMedico;
+        this.descripcion = descripcion;
+        this.localidad = localidad;
+        this.horario = horario;
+        this.turnoEstado = turnoEstado;
+    }
+}
+  
+   let contenedor= document.getElementById("contenedor-tabla");
+   
+  const listarPacientes= () =>{
+    contenedor.innerHTML= "";
+    
+        personas.forEach((item) => {
+        
+            if (item.medico) {
+            let estructuraFila= document.createElement("tr");
+            //creo la estructura de la tabla
+            let datos = ` 
+            <td>${item.nombre}</td>
+            <td>${item.apellido}</td>
+            <td>${item.especialidad}</td>
+            <td> ${item.edad} Años</td>
+            <td>${item.localidad}</td>
+            <td><button onclick="turno(${item.id})" class="btn btn-success">Sacar Turno</button>
+            </td> 
+            `;
+            estructuraFila.innerHTML= datos;
+            contenedor.appendChild(estructuraFila);
+            }
+   
+
+       });
+
+      };
+
+      const turno = (id) => {
+        let paciente = personas.find(persona => persona.id === id);
+        if (paciente) {
+            let nuevoTurno = new Turno(
+                paciente.id,
+                paciente.nombre,
+                `${paciente.nombre} ${paciente.apellido}`, // Ejemplo para nombre del médico, puedes ajustar según tus necesidades
+                "Consulta General", // Descripción del turno
+                paciente.localidad,
+                "10:00 AM", // Ejemplo de horario, puedes ajustar según tus necesidades
+                "Pendiente"
+            );
+            turnos.push(nuevoTurno);
+            console.log(`Turno creado:`, nuevoTurno);
+            localStorage.setItem("turnos", JSON.stringify(turnos));
+        } else {
+            console.log(`No se encontró la persona con id ${id}`);
+        }
+    };
+
+  listarPacientes();
+  
+  
