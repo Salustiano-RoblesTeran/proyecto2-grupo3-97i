@@ -17,9 +17,10 @@
     <main>
       <div>
           <div id="bord">
-            <h3>Registrarse</h3>
-            <form id="formulario">
-                <div class="d-flex justify-content-evenly">
+           
+            <form id="formregP">
+              <h3>Registrarse</h3>
+                <div  id="namelastN">
                 <div class="itemsform">
                   <input
                     type="text"
@@ -92,7 +93,7 @@
                 </div>
 
                 <div class="">
-                  <button type="submit" class="btn btn-success mt-2" id="buttonreg" onclick="agregarUsuario(event)">
+                  <button type="submit" class="btn btn-success mt-2" id="buttonreg">
                     Registrarme
                   </button>
                 </div>
@@ -151,23 +152,21 @@ style="background-color: rgb(249, 249, 247)"
     <div class="modal-body">
       <form>
       <div class="">
-        <label for="inputUsuario" class="form-label">Usuario</label>
         <input
           type="text"
           class="form-control"
-          id="inputUsuario"
-          placeholder="Ingrese su Usuario"
+          id="inputCorreo"
+          placeholder="Ingrese su correo"
           required
         />
       </div>
 
       <div class="mt-2">
-        <label for="inputPassI" class="form-label">Contraseña</label>
         <input
           type="password"
           class="form-control"
           id="inputPassI"
-          placeholder="Escriba su contraseña"
+          placeholder="Ingrese su contraseña"
           required
         />
       </div>
