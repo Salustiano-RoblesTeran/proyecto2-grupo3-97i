@@ -23,7 +23,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="registro_medico.css" />
+    <link rel="stylesheet" href="test_registro.css" />
   </head>
 
   <header>
@@ -89,7 +89,9 @@
   </header>
 
   <main>
-    <div class="d-flex justify-content-between flex-wrap">
+    <h1>Registro Medico</h1>
+
+    <div class="grid_container">
       <form class="formulario" id="formulario">
         <div class="row">
           <div class="col-sm-12 col-md-6 my-2 mx-auto">
@@ -161,10 +163,32 @@
           </div>
         </div>
 
+
         <div class="col my2-3 mx-auto">
-          <label for="password" class="form-label"
-            >Contraseña</label
-          >
+          <label for="doctor" class="form-label"
+          >Medico</label
+        >
+
+        
+
+        <input type="checkbox" class="form-check-input" id="doctor" onclick="display_especialidad()">
+      </div>
+
+      <div class="col my2-3 mx-auto" id="div_especialidad" style="display:none">
+          <label for="especialidad" class="form-label" >Especialidad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="especialidad"
+            placeholder="Ingrese su especialidad"
+            aria-label="default input example"
+            
+          />
+        </div>
+
+
+        <div class="col my2-3 mx-auto">
+          <label for="password" class="form-label">Contraseña</label>
           <input
             type="password"
             class="form-control"
@@ -182,23 +206,26 @@
         </div>
 
         <div class="col my2-3 mx-auto">
-        <label for="confirm_password" class="form-label"
-          >Confirmar contraseña</label
-        >
-        <input
-          type="password"
-          class="form-control"
-          id="confirm_password"
-          aria-describedby="contraseñaHelp"
-          placeholder="Confirmar contraseña"
-          required
-        />
+          <label for="confirm_password" class="form-label"
+            >Confirmar contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="confirm_password"
+            aria-describedby="contraseñaHelp"
+            placeholder="Confirmar contraseña"
+            required
+          />
 
-        <div id="contraseñaHelp" class="form-text">Enter the same password</div>
-      </div>
+          <div id="contraseñaHelp" class="form-text">
+            Enter the same password
+          </div>
+        </div>
 
-        <button type="submit" class="btn btn-primary" id="button_submit">Crear cuenta</button>
-
+        <button type="submit" class="btn btn-primary" id="button_submit">
+          Crear cuenta
+        </button>
 
         <div class="d-flex">
           <div>
@@ -212,12 +239,13 @@
               >Login</a
             >
           </div>
-
-          
         </div>
       </form>
 
-     
+      <div>
+        <img id="img_right" src="https://risefoc.com/wp-content/uploads/2022/07/Registration-image-scaled.jpeg" alt="img_registro_medico">
+      </div>
+
     </div>
   </main>
 
@@ -237,7 +265,7 @@
       </li>
     </ul>
   </footer>
-  <script src="registro_medico.js"></script>
+  <script src="test_registro.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -266,7 +294,6 @@
       </div>
 
       <div class="modal-body">
-        
         <form>
           <!-- <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
@@ -279,7 +306,9 @@
           </div> -->
 
           <div class="mb-3">
-            <label for="login_username" class="form-label">Nombre de Usuario</label>
+            <label for="login_username" class="form-label"
+              >Nombre de Usuario</label
+            >
             <input
               type="text"
               class="form-control"
@@ -289,9 +318,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="login_password" class="form-label"
-              >Contraseña</label
-            >
+            <label for="login_password" class="form-label">Contraseña</label>
 
             <input
               type="password"
@@ -302,10 +329,16 @@
             />
           </div>
         </form>
-      </div>
-      
-      <div class="modal-footer">
         
+        <div>
+          <img
+            src="https://risefoc.com/wp-content/uploads/2022/07/Registration-image-scaled.jpeg"
+            alt="registro_medico"
+          />
+        </div>
+      </div>
+
+      <div class="modal-footer">
         <button
           type="button"
           class="btn btn-outline-primary"
@@ -314,17 +347,14 @@
           Cerrar
         </button>
 
-        
         <button
           type="button"
           class="btn btn-outline-primary"
           data-bs-dismiss="modal"
         >
-          Registrarse
+          Login
         </button>
-      
       </div>
-
     </div>
   </div>
 </div>
