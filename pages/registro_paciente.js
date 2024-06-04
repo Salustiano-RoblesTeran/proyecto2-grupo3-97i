@@ -1,4 +1,4 @@
-let usuarios = [];
+let usuarios = JSON.parse(localStorage.getItem("registrados")) || [];
 
 class Usuario{
     constructor (id, name, lastName, email, password, cpassword, direccion, telefono, estado = true){
@@ -32,24 +32,43 @@ const newUser = (event) => {
     let direccion = document.getElementById("inputDireccion").value;
     let telefono = document.getElementById("telInput").value;
 
+    if (!name || !lastName || !email || !password || !cpassword || !direccion || !telefono) {
+        alert("Todos los campos son obligatorios.");
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Ingrese un correo electrónico válido.");
+        return;
+    }
+
+    if (password.length < 8){
+        alert("La contraseña debe tener al menos 8 caracteres.");
+        return;
+    } 
+
+    if (password !== cpassword){
+        alert ("Las contraseñas no coinciden.");
+        return;
+    } 
+
+    if (usuarios.some(usuario => usuario.email === email)) {
+        alert("El correo ya está registrado.");
+        return;
+    }
+
     let usuario = new Usuario(id, name, lastName, email, password, cpassword, direccion, telefono);
 
-    usuario.cambiarEstado();
 
     usuarios.push(usuario);
+
     localStorage.setItem("registrados", JSON.stringify(usuarios));
 
-    document.querySelector("#buttonreg").onclick=()=>{
-    if (password.length < 8){
-        alert("La contraseña debe tener al menos 8 caracteres");
-    } 
-    else if (password !== cpassword){
-        alert ("Las contraseñas no coinciden.");
-    } 
-    else if (password == cpassword){
-        alert ("Su registro fue exitoso!");
-    }
-}
+    alert ("Su registro fue exitoso!");
+
+    formregistroP.reset();
+
 document.getElementById("inputName").value = "" ;
 document.getElementById("inputlastName").value = "" ;
 document.getElementById("emailInput").value = "" ;
@@ -58,9 +77,6 @@ document.getElementById("inputPassC").value = "" ;
 document.getElementById("inputDireccion").value = "" ;
 document.getElementById("telInput").value = "" ;
 };
-
-
-
 
     formregistroP.addEventListener('submit', newUser);
 
