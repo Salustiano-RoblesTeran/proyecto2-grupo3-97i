@@ -3,7 +3,6 @@ const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
 const baseDatos = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 let contenedor = document.getElementById("contenedor-tabla");
-
 let nombreUsuario = document.getElementById('nombreUsuario');
 nombreUsuario.innerText = `${user.first_name} ${user.last_name}`;
 
@@ -11,7 +10,7 @@ const listarPacientes= () =>{
  contenedor.innerHTML= "";
  
     turnos.forEach((turno) => {
-     if (turno.turnoEstado === "Pendiente") {
+     if (turno.turnoEstado === "Aceptado") {
           let estructuraFila= document.createElement("tr");
           let medico = baseDatos.find(medico => medico.id == turno.idMedico);
           console.log(medico);
@@ -30,7 +29,7 @@ const listarPacientes= () =>{
           contenedor.appendChild(estructuraFila);
           console.log(turnos)
      } else {
-          contenedor.innerHTML= "No hay turnos pendientes";
+          contenedor.innerHTML= "No hay turnos aceptados";
      }
 
 

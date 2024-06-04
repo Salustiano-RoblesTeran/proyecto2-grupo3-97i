@@ -1,11 +1,7 @@
-const user = JSON.parse(localStorage.getItem("SesionActiva"));
 const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
 const baseDatos = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 let contenedor = document.getElementById("contenedor-tabla");
-
-let nombreUsuario = document.getElementById('nombreUsuario');
-nombreUsuario.innerText = `${user.first_name} ${user.last_name}`;
 
 const listarPacientes= () =>{
  contenedor.innerHTML= "";
@@ -23,7 +19,8 @@ const listarPacientes= () =>{
           <td> ${medico.age} Años</td>
           <td>${medico.department}</td>
           <td>${turno.horario}</td>
-          <td>${turno.turnoEstado}
+          <td> <button onclick="rechazar(${turno.idTurno})" class="btn btn-danger">Rechazar</button>
+          <button onclick="aceptar(${turno.idTurno})" class="btn btn-success">Aceptar</button>
           </td> 
           `;
           estructuraFila.innerHTML= datos;
@@ -38,5 +35,19 @@ const listarPacientes= () =>{
     });
 
    };
+
+   const rechazar = (idTurno) => {
+        const turno = turnos.find(turno => turno.idTurno === idTurno);
+        turno.turnoEstado = "Rechazado";
+        localStorage.setItem("turnos", JSON.stringify(turnos));
+        listarPacientes();
+   }
+
+   const aceptar = (idTurno) => {
+    const turno = turnos.find(turno => turno.idTurno === idTurno);
+    turno.turnoEstado = "Aceptado";
+    localStorage.setItem("turnos", JSON.stringify(turnos));
+    listarPacientes();
+}
 
    listarPacientes();

@@ -1,17 +1,13 @@
-const user = JSON.parse(localStorage.getItem("SesionActiva"));
 const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
 const baseDatos = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 let contenedor = document.getElementById("contenedor-tabla");
 
-let nombreUsuario = document.getElementById('nombreUsuario');
-nombreUsuario.innerText = `${user.first_name} ${user.last_name}`;
-
 const listarPacientes= () =>{
  contenedor.innerHTML= "";
  
     turnos.forEach((turno) => {
-     if (turno.turnoEstado === "Pendiente") {
+     if (turno.turnoEstado == "Aceptado") {
           let estructuraFila= document.createElement("tr");
           let medico = baseDatos.find(medico => medico.id == turno.idMedico);
           console.log(medico);
@@ -23,7 +19,7 @@ const listarPacientes= () =>{
           <td> ${medico.age} Años</td>
           <td>${medico.department}</td>
           <td>${turno.horario}</td>
-          <td>${turno.turnoEstado}
+          <td> ${turno.turnoEstado}
           </td> 
           `;
           estructuraFila.innerHTML= datos;
@@ -37,6 +33,6 @@ const listarPacientes= () =>{
 
     });
 
-   };
+}
 
    listarPacientes();

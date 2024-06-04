@@ -16,7 +16,7 @@ para poder hacer uso de este proyecto unicamente debe clonar el repositorio.
 
 
 1. [Bootstrap v5](https://getbootstrap.com/)
-1. [FontAwesome] (https://fontawesome.com/)
+1. [FontAwesome](https://fontawesome.com/)
 
 ## Autores 👩‍💻👨‍💻
 
