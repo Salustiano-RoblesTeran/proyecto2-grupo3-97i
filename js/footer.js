@@ -20,7 +20,6 @@ function Footer() {
                 <li><a class=" text-light m-2" href="">Quienes Somos</a></li>
                 <li><a class=" text-light m-2" href="">Inicio</a></li>
                 <li><a class=" text-light m-2" href="">Contactanos</a></li>
-                <li><a class=" text-light m-2" href="">Nuestra Historia</a></li>
               </ul>
             </aside>
             <aside class="col-xl-3 col-sm-3 col-md-3">
