@@ -15,16 +15,16 @@ const listarPacientes = () => {
     let contenedor = document.getElementById("contenedor-tabla");
     contenedor.innerHTML = "";
 
-    let turnosAceptados = turnos.filter(turno => turno.turnoEstado === "Aceptado");
+    let turnosRechazados = turnos.filter(turno => turno.turnoEstado === "Rechazado");
 
-    if (turnosAceptados.length > 0) {
-        turnosAceptados.forEach((turno) => {
+    if (turnosRechazados.length > 0) {
+        turnosRechazados.forEach((turno) => {
             let estructuraFila = document.createElement("tr");
             
             // Asegúrate de que `medico` existe
                 let datos = `
                     <td>${turno.nombreMedico}</td>
-                    <td>${turno.especialidad}</td>
+                    <td>${turno.dni}</td>
                     <td>${turno.consulta}</td>
                     <td>${turno.age} Años</td>
                     <td>${turno.department}</td>
@@ -35,7 +35,7 @@ const listarPacientes = () => {
                 contenedor.appendChild(estructuraFila);
         });
     } else {
-        contenedor.innerHTML = "<tr><td colspan='7'>No hay turnos aceptados</td></tr>";
+        contenedor.innerHTML = "<tr><td colspan='7'>No hay turnos rechazados</td></tr>";
     }
 };
 

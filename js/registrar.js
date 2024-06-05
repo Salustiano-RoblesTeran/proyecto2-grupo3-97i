@@ -13,20 +13,17 @@ class User {
     }
 }
 
+const admin = {
+    email: "admin@gmail.com",
+    password: "admin@1234"
+}
+
 // Traemos los usuarios del locaStorage
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 let formRegistro = document.getElementById('formularioRegistro');
 
-const mostrarEspecialidad = () => {
-    let checkBox = document.getElementById('medico');
-    let inputEspecialidad = document.getElementById('inputEspecialidad');
-    if (checkBox.checked) {
-        inputEspecialidad.style.display = 'block'
-    } else {
-        inputEspecialidad.style.display = 'none'
-    }
-}
+
 
 const crearUsuario = (event) => {
     event.preventDefault();
@@ -37,11 +34,9 @@ const crearUsuario = (event) => {
     let age = document.getElementById("edad").value;
     let department = document.getElementById("departamento").value;
     let email = document.getElementById("exampleInputEmail1").value;
-    let medico = document.getElementById('medico').checked;
-    let especialidad = medico ? document.getElementById('especialidadMedico').value : null;
     let password = document.getElementById("password").value;
 
-    let user = new User(id, first_name, last_name, age, department, email, medico, especialidad, password);
+    let user = new User(id, first_name, last_name, age, department, email, medico = false, especialidad = null, password);
 
     usuarios.push(user);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -56,21 +51,27 @@ const login = (event) => {
     const email = document.getElementById('login_username').value;
     const password = document.getElementById('login_password').value;
 
+    if (admin.email === email && admin.password === password) {
+        alert("Inicio de sesión exitoso");
+        window.location.href = "../pages/panelAdmin.html";
+        localStorage.setItem("SesionActiva", JSON.stringify(admin));
+    }
+
     const user = usuarios.find(user => user.email === email && user.password === password);
 
-    if (user) {
-        alert("Inicio de sesión exitoso");
-        console.log(user)
-        localStorage.setItem("SesionActiva", JSON.stringify(user));
-        if (user.medico) {
-            window.location.href = "../pages/homeMedico.html";
-        } else {
-            window.location.href = "../pages/homePaciente.html";
-        }
-        // Aquí puedes redirigir al usuario a otra página, mostrar un mensaje de bienvenida, etc.
-        
-    } else {
+    if (!user) {
+
         alert("Correo electrónico o contraseña incorrectos");
+    } else if (user.medico) {
+        alert("Inicio de sesión exitoso");
+        window.location.href = "../pages/homeMedico.html";
+        localStorage.setItem("SesionActiva", JSON.stringify(user));
+
+
+        } else {
+            alert("Inicio de sesión exitoso");
+            window.location.href = "../pages/homePaciente.html";
+            localStorage.setItem("SesionActiva", JSON.stringify(user));
     }
 }
 

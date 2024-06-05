@@ -3,29 +3,43 @@ const user = JSON.parse(localStorage.getItem("SesionActiva"));
 const baseDatos = JSON.parse(localStorage.getItem("usuarios")) || [];
 const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
 
+let cerrarSesion = document.getElementById('cerrarSesion');
+
+cerrarSesion.addEventListener('click', ()=> {
+    window.location.href = "../index.html";
+    localStorage.removeItem('SesionActiva');
+
+})
+
+let nombreUsuario = document.getElementById('nombreUsuario');
+nombreUsuario.innerText = `${user.first_name} ${user.last_name}`;
+
 class Turno {
-    constructor(idTurno, idMedico, idPaciente, nombrePaciente, nombreMedico, consulta, dni, horario, turnoEstado) {
+    constructor(idTurno, idMedico, idPaciente, nombrePaciente,apellidoPaciente,age,department, nombreMedico, consulta, especialidad, dni, horario, turnoEstado) {
         this.idTurno = idTurno;
         this.idMedico = idMedico;
         this.idPaciente = idPaciente;
         this.nombrePaciente = nombrePaciente;
+        this.apellidoPaciente = apellidoPaciente;
+        this.age = age;
+        this.department = department;
         this.nombreMedico = nombreMedico;
         this.consulta = consulta;
+        this.especialidad = especialidad;
         this.dni = dni;
         this.horario = horario;
         this.turnoEstado = turnoEstado;
     }
 }
 
-// Verificar si user tiene datos antes de intentar asignar valores
-if (user.first_name && user.last_name) {
-    let nombreUsuario = document.getElementById('nombreUsuario');
-    nombreUsuario.innerText = `${user.first_name} ${user.last_name}`;
-}
+
 
 let contenedor = document.getElementById("contenedor-tabla");
 
 const listarMedicos = () => {
+    let nombreUsuario = document.getElementById('nombreUsuario');
+    nombreUsuario.innerText = `${user.first_name} ${user.last_name}`;
+
     contenedor.innerHTML = "";
     baseDatos.forEach((medicoDisponibles) => {
         if (medicoDisponibles.medico) {
@@ -58,8 +72,7 @@ const abrirModal = (id) => {
             let dni = document.getElementById('dni').value;
             let consulta = document.getElementById('consulta').value;
             let horario = document.getElementById('turno').value;
-
-            let nuevoTurno = new Turno(idTurno, medico.id, user.id, user.first_name, medico.first_name, consulta, dni, horario, 'Pendiente');
+            let nuevoTurno = new Turno(idTurno, medico.id, user.id, user.first_name, user.last_name, medico.age,medico.department,medico.first_name, consulta, medico.especialidad,dni, horario, 'Pendiente');
             turnos.push(nuevoTurno);
             localStorage.setItem("turnos", JSON.stringify(turnos));
         };
