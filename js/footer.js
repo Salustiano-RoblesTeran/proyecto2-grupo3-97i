@@ -25,28 +25,28 @@ function Footer() {
             <aside class="col-xl-3 col-sm-3 col-md-3">
               <p class="h5 text-light m-2">Legal</p>
               <ul>
-                <li><a class="text-light m-2" href="./page/error404.html">Terminos y condiciones</a></li>
-                <li><a class="text-light m-2" href="./page/error404.html">Politica de privacidad</a></li>
+                <li><a class="text-light m-2" href="../pages/error404.html">Terminos y condiciones</a></li>
+                <li><a class="text-light m-2" href="../pages/error404.html">Politica de privacidad</a></li>
                 <li>
-                  <a class="text-light m-2" href="./page/error404.html">Politica de derecho de autor</a>
+                  <a class="text-light m-2" href="../pages/error404.html">Politica de derecho de autor</a>
                 </li>
-                <li><a class="text-light m-2" href="./page/error404.html">Descargar App Movil</a></li>
+                <li><a class="text-light m-2" href="../pages/error404.html">Descargar App Movil</a></li>
               </ul>
             </aside>
             <aside class="col-xl-3 col-sm-3 col-md-3">
               <p class="h5 text-light m-2">Redes Sociales</p>
               <ul>
                 <li>
-                  <a  class="text-light m-2"href="./page/error404.html"><i class="bi bi-facebook"></i> Facebook</a>
+                  <a  class="text-light m-2"href="../pages/error404.html"><i class="bi bi-facebook"></i> Facebook</a>
                 </li>
                 <li>
-                  <a class="text-light m-2" href="./page/error404.html"><i class="bi bi-twitter"></i> Twitter</a>
+                  <a class="text-light m-2" href="../pages/error404.html"><i class="bi bi-twitter"></i> Twitter</a>
                 </li>
                 <li>
-                  <a class="text-light m-2" href="./page/error404.html"><i class="bi bi-instagram"></i> Instagram</a>
+                  <a class="text-light m-2" href="../pages/error404.html"><i class="bi bi-instagram"></i> Instagram</a>
                 </li>
                 <li>
-                  <a class="text-light m-2" href="./page/error404.html"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                  <a class="text-light m-2" href="../pages/error404.html"><i class="bi bi-linkedin"></i> LinkedIn</a>
                 </li>
               </ul>
             </aside>
