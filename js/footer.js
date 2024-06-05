@@ -17,7 +17,7 @@ function Footer() {
             <aside class="col-xl-3 col-sm-3 col-md-3">
               <p class="h5 text-light m-2">Navegacion</p>
               <ul>
-                <li><a class=" text-light m-2" href="">Quienes Somos</a></li>
+                <li><a class=" text-light m-2" href="../pages/quienesSomos.html">Quienes Somos</a></li>
                 <li><a class=" text-light m-2" href="">Inicio</a></li>
                 <li><a class=" text-light m-2" href="">Contactanos</a></li>
               </ul>
