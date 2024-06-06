@@ -59,7 +59,7 @@ const listarMedicos = () => {
 };
 
 const abrirModal = (id) => {
-    let medico = baseDatos.find(medico => medico.id == id);
+    const medico = baseDatos.find(medico => medico.id === id);
     if (medico) {
         let textTurno = document.getElementById('textTurno');
         textTurno.innerText = `Usted, ${user.first_name} ${user.last_name}, quiere sacar turno con el medico ${medico.first_name} ${medico.last_name} en la especialidad ${medico.especialidad}.`;
@@ -76,11 +76,12 @@ const abrirModal = (id) => {
             turnos.push(nuevoTurno);
             localStorage.setItem("turnos", JSON.stringify(turnos));
 
-            alert("turno sacado exitosamente!");
+            return alert("turno sacado exitosamente!");
 
         };
-        window.location.href = "./homePaciente.html";
+        
     }
+    // window.location.href = "./homePaciente.html";
 };
 
 listarMedicos();
