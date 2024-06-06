@@ -75,7 +75,11 @@ const abrirModal = (id) => {
             let nuevoTurno = new Turno(idTurno, medico.id, user.id, user.first_name, user.last_name, medico.age,medico.department,medico.first_name, consulta, medico.especialidad,dni, horario, 'Pendiente');
             turnos.push(nuevoTurno);
             localStorage.setItem("turnos", JSON.stringify(turnos));
+
+            alert("turno sacado exitosamente!");
+
         };
+        window.location.href = "./homePaciente.html";
     }
 };
 

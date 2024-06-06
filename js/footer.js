@@ -37,16 +37,16 @@ function Footer() {
               <p class="h5 text-light m-2">Redes Sociales</p>
               <ul>
                 <li>
-                  <a  class="text-light m-2"href="../pages/error404.html"><i class="bi bi-facebook"></i> Facebook</a>
+                  <a  class="text-light m-2"href="https://www.facebook.com/l" target = "_blank"><i class="bi bi-facebook"></i> Facebook</a>
                 </li>
                 <li>
-                  <a class="text-light m-2" href="../pages/error404.html"><i class="bi bi-twitter"></i> Twitter</a>
+                  <a class="text-light m-2" href="https://twitter.com/home" target = "_blank><i class="bi bi-twitter"></i> Twitter</a>
                 </li>
                 <li>
-                  <a class="text-light m-2" href="../pages/error404.html"><i class="bi bi-instagram"></i> Instagram</a>
+                  <a class="text-light m-2" href="https://www.instagram.com/" target = "_blank><i class="bi bi-instagram"></i> Instagram</a>
                 </li>
                 <li>
-                  <a class="text-light m-2" href="../pages/error404.html"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                  <a class="text-light m-2" href="www.linkedin.com" target = "_blank><i class="bi bi-linkedin"></i> LinkedIn</a>
                 </li>
               </ul>
             </aside>

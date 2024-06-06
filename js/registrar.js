@@ -1,17 +1,18 @@
 // creamos la clase usuarios, con todos sus atributos
 class User {
-    constructor(id, first_name, last_name, age, department, email, medico = false, especialidad = null, password) {
+    constructor(id, first_name, last_name, age, department, email, password, medico = false, especialidad = null) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.age = age;
         this.department = department;
         this.email = email;
+        this.password = password;
         this.medico = medico;
         this.especialidad = especialidad;
-        this.password = password;
     }
 }
+
 
 const admin = {
     email: "admin@gmail.com",
@@ -35,12 +36,21 @@ const crearUsuario = (event) => {
     let department = document.getElementById("departamento").value;
     let email = document.getElementById("exampleInputEmail1").value;
     let password = document.getElementById("password").value;
+    let confirm_password = document.getElementById("confirm_password").value;
 
-    let user = new User(id, first_name, last_name, age, department, email, medico = false, especialidad = null, password);
+    if (password === confirm_password) {
+        let user = new User(id, first_name, last_name, age, department, email, password,false,null);
 
-    usuarios.push(user);
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        usuarios.push(user);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        alert("Registro exitoso.");
+        window.location.href = "./index.html";
+    } else {
+        alert("Las contraseña no coinciden!");
+    }
+
 }
+
 
 formRegistro.addEventListener('submit', crearUsuario);
 
